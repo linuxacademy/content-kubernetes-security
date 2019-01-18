@@ -6,7 +6,7 @@ aws s3 mb s3://k8s3.$AWS_HOSTED_ZONE
 export KOPS_STATE_STORE=s3://k8s3.$AWS_HOSTED_ZONE
 export KOPS_CLUSTER_NAME=k8s.$AWS_HOSTED_ZONE
 echo "CREATING RSA KEY"
-echo "=================\n"
+echo "================="
 ssh-keygen -q -f ./.ssh/id_rsa -N ''
 echo "CREATING CLUSTER"
 echo "================="
