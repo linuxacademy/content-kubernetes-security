@@ -1,0 +1,11 @@
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/enable_start_docker_kube.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/fstab.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/install_flannel.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/kubeadm_init.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/kubernetes.repo
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/set_cgroup_driver.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/set_up_bridging.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/turn_off_selinux.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/turn_off_swap.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/yum_install_docker_ce.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/yum_install_kube.sh
