@@ -9,3 +9,4 @@ wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/turn
 wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/turn_off_swap.sh
 wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/yum_install_docker_ce.sh
 wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/yum_install_kube.sh
+wget https://raw.github.com/linuxacademy/content-kubernetes-security/master/ks-setup-step1.sh
