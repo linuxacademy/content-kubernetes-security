@@ -1,7 +1,7 @@
-chmod +x ./*.sh
-./turn_off_selinux.sh
-./turn_off_swap.sh
-./fstab.sh
-./set_up_bridging.sh
-cp ./kubernetes.repo /etc/yum.repos.d/kubernetes.repo
+chmod +x ./*.sh &>> ./setup-step1.out
+./turn_off_selinux.sh &>> ./setup-step1.out
+./turn_off_swap.sh &>> ./setup-step1.out
+./fstab.sh &>> ./setup-step1.out
+./set_up_bridging.sh &>> ./setup-step1.out
+cp ./kubernetes.repo /etc/yum.repos.d/kubernetes.repo &>> ./setup-step1.out
 reboot
