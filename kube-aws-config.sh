@@ -16,7 +16,7 @@ echo "  --hosted-zone-id=$AWS_HOSTED_ZONE_ID \\ "
 echo "  --external-dns-name=k8s.$AWS_HOSTED_ZONE \\ "
 echo "  --key-name=ks-lab-key \\ "
 echo "  --kms-key-arn=$AWS_KMS_KEY \\ "
-echo "  --s3-uri=$AWS_S3_BUCKET\n"
+echo "  --s3-uri=$AWS_S3_BUCKET"
 kube-aws init \
   --cluster-name=k8s-ks-lab \
   --region=us-east-1 \
