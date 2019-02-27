@@ -8,14 +8,14 @@ export AWS_HOSTED_ZONE_ID="$(aws route53 list-hosted-zones | jq '.HostedZones[0]
 echo "Hosted Zone ID:" $AWS_HOSTED_ZONE_ID
 aws s3 mb s3://k8s3.$AWS_HOSTED_ZONE
 export AWS_S3_BUCKET=s3://k8s3.$AWS_HOSTED_ZONE
-echo "kube-aws init \"
-echo "  --cluster-name=k8s-ks-lab \"
-echo "  --region=us-east-1 \"
-echo "  --availability-zone=us-east-1c \"
-echo "  --hosted-zone-id=$AWS_HOSTED_ZONE_ID \"
-echo "  --external-dns-name=k8s.$AWS_HOSTED_ZONE \"
-echo "  --key-name=ks-lab-key \"
-echo "  --kms-key-arn=$AWS_KMS_KEY \"
+echo "kube-aws init \\ "
+echo "  --cluster-name=k8s-ks-lab \\ "
+echo "  --region=us-east-1 \\ "
+echo "  --availability-zone=us-east-1c \\ "
+echo "  --hosted-zone-id=$AWS_HOSTED_ZONE_ID \\ "
+echo "  --external-dns-name=k8s.$AWS_HOSTED_ZONE \\ "
+echo "  --key-name=ks-lab-key \\ "
+echo "  --kms-key-arn=$AWS_KMS_KEY \\ "
 echo "  --s3-uri=$AWS_S3_BUCKET\n"
 kube-aws init \
   --cluster-name=k8s-ks-lab \
