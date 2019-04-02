@@ -1,0 +1,49 @@
+Kubernetes Security
+Security Contexts Exercise
+Commands Summary
+
+The command to run a pod from the repository specified in the lesson is:
+
+$ kubectl create -f https://k8s.io/examples/pods/security/security-context.yaml
+
+NOTE: OPTIONAL: You may use wget to bring the file down to your present working directory by entering:
+
+$ wget https://k8s.io/examples/pods/security/security-context.yaml
+
+Then you could look at its contents using an editor or with the Linux cat command.
+
+If you bring the file down using wget, then you can run the pod with:
+
+$ kubectl create -f security-context.yaml
+
+To see which pods are running on your system, enter:
+
+$ kubectl get pods
+
+Once the pod is running, you may execute a shell inside the container instance, by entering:
+
+$ kubectl exec -it security-context-demo -- sh
+
+Once inside the container, you may list the directory contents:
+
+$ ls -l
+
+To change directory to the data directory, input:
+
+$ cd data
+
+Once the data directory is your present working directory, you can create a file with:
+
+$ echo "hello" > test.file
+
+Then list the file with ls to see its owner and group settings:
+
+$ ls -l
+
+You may also run a process status command to see the processes running and note the user under which they are running.
+
+$ ps aux
+
+You may exit the container shell by entering:
+
+$ exit
