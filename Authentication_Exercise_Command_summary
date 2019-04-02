@@ -1,0 +1,60 @@
+Kubernetes Security
+Authentication Exercise Commands Summary
+
+To create a serviceaccount called jenkins, enter the following command:
+
+$ kubectl create serviceaccount jenkins
+
+You may display detailed information about the service account with the following command:
+
+$ kubectl get serviceaccounts jenkins -o yaml
+
+To see all secrets in the current namespace input:
+
+$ kubectl get secrets
+
+To interrogate further you may output yaml for a particular secret with this command:
+
+$ kubectl get secret <token name from previous command> -o yaml
+
+To see all serviceaccounts in the current namespace:
+
+$ kubectl get serviceaccounts
+
+To intterogate a serviceaccount:
+
+$ kubectl describe serviceaccount jenkins
+
+To run a pos under a specific serviceaccount, create a yaml file as follows:
+
+You may use the editor to input the file or use wget to download it from the course github site.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ks-demo-pod
+spec:
+  serviceAccountName: jenkins
+  containers:
+  - name: shell
+    image: alpine:3.7
+	command:
+	- "sh"
+	- "-c"
+	- "sleep 10000"
+
+To run the pod, enter this command:
+
+$ kubectl apply -f ks-demo-pod.yaml
+
+You may interrogate the pod with the describe verb:
+
+$ kubectl describe po/ks-demo-pod
+
+To run a shell inside the container, input:
+
+$ kubectl exec -it ks-demo-pod -- sh
+
+Once inside the pod container, you may output the token with the following command:
+
+/ # cat /var/run/secrets/kubernetes.io/serviceaccount/token
