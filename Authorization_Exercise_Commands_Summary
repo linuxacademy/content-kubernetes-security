@@ -1,0 +1,58 @@
+Kubernetes Security
+Authorization Exercise Commands Summary
+
+To view the clusterroles on your system, enter:
+
+$ kubectl get clusterroles
+
+To interrogate a particular clusterrole, input:
+
+$ kubectl get clusterroles <name of role> -o yaml
+
+You may also use the describe verb with clusterroles:
+
+$ kubectl describe clusterrole view
+
+To create a namespace called 'qa-test' input the following:
+
+$ kubectl create namespace qa-test
+
+To create a serviceaccount called qa-test-account within the namespace qa-test, input:
+
+$ kubectl --namespace=qa-test create serviceaccount qa-test-account
+
+To create a role with the qa-test namespace called 'qa-tester-view' that grants the get and list verb actions on the pods resource, input:
+
+$ kubectl --namespace=qa-test create role qa-tester-view --verb=get --verb=list --resource=pods
+
+To setup a Linux alias so you don't have to specify the namespace on every command, input:
+
+$ alias kubeqa='kubectl --namespace=qa-test'
+
+If you set up the above alias, the commands to create the role would be:
+
+$ kubeqa create role qa-tester-view --verb=get --verb=list --resource=pods
+
+To describe the role, input either of the following:
+
+$ kubectl --namespace=qa-test describe role/qa-tester-view
+
+ or
+
+$ kubeqa describe role/qa-tester-view
+
+Now the role must be bound to the serviceaccount. To create the rolebinding, input:
+
+$ kubeqa create rolebinding qa-viewer --role=qa-tester-view --serviceaccount=qa-test:qa-test-account
+
+To describe the rolebinding, enter:
+
+$ kubeqa describe rolebinding/qa-viewer
+
+To test authorization, you may use the 'can-i' argument as follows. To test whether the serviceaccount may list pods, input:
+
+$ kubeqa auth can-i --as=system:serviceaccount:qa-test:qa-test-account list pods
+
+To test whether the serviceaccount may list services, input:
+
+$ kubeqa auth can-i --as=system:serviceaccount:qa-test:qa-test-account list services
