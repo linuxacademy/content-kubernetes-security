@@ -93,7 +93,7 @@ Create the hidden directory called .kube.
 $ mkdir -p .kube
 
 Copy the kubernetes admin configuration from /etc/kubernetes to the .kube directory in our home path, and name it config.
-$ sudo cp -I /etc/kubernetes/admin.conf $HOME/.kube/config
+$ sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
 
 Change ownership and group ownership of the config file to cloud_user.
 $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
