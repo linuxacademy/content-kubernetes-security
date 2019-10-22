@@ -1,7 +1,7 @@
-Kubernetes Security
-Linux Commands Summary and Guide
+### Kubernetes Security
+### Linux Commands Summary and Guide
 
-Preparing the Playground Servers
+#### Preparing the Playground Servers
 
 From linuxacademy.com, Cloud Servers -> Playground
 
@@ -11,14 +11,14 @@ You may change the Zone from North America but please use the same Zone for all 
 
 Copy off the Public IP Address and the cloud_user credentials; the login and temporary password. 
 
-Setting Up The Master Nodes
+#### Setting Up The Master Nodes
 
 The URL for the course assets in GitHub are at:
 https://github.com/linuxacademy/content-kubernetes-security
 
 Access your servers through the SSH utility on your client or our terminal session provided through linuxacademy.com.
 
-$ ssh cloud_user@<Your Server Public IP Here>
+``` $ ssh cloud_user@<Your Server Public IP Here>
 
 Use the temporary password for first login, and when it prompts you to change the password, set the password to whatever you choose.
 
