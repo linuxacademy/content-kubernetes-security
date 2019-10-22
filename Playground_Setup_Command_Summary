@@ -72,7 +72,7 @@ Verify that kubeadm has been installed.
 # kubeadm version
 
 Enter the command (on the master node) to initiate a cluster.
-# kubeadm init –-pod-network-cidr=10.244.0.0/16
+# kubeadm –-pod-network-cidr=10.244.0.0/16 init
 
 NOTE: The –-pod-network-cidr address pool being supplied is intended to facilitate the use of the flannel network overlay which will be installed in a subsequent step.
 
