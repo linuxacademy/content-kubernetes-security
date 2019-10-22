@@ -4,6 +4,6 @@
 
 This repository is a group of scripts and documents to assist students of Linux Academy in taking the Kubernetes Security Course provided at linuxacademy.com
 
-All scripts and documents in this repository are wopyrighted work product of Linux Academy Inc.
+All scripts and documents in this repository are copyrighted work product of Linux Academy Inc.
 
 (c) 2019 Linux Academy, All Rights Reserved
