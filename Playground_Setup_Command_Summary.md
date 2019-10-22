@@ -86,7 +86,7 @@ Verify that kubeadm has been installed.
 
 Enter the command (on the master node) to initiate a cluster.
 
-` # kubeadm –-pod-network-cidr=10.244.0.0/16 init `
+` # kubeadm init –-pod-network-cidr=10.244.0.0/16 `
 
 > NOTE: The –-pod-network-cidr address pool being supplied is intended to facilitate the use of the flannel network overlay which will be installed in a subsequent step.
 
@@ -213,9 +213,6 @@ On the Master and Worker Nodes
 Then just repeat the init command on the master.
 
 ` # kubeadm init –pod-network-cidr=10.244.0.0/16 `
-
-> NOTE: A recent change (bug) in Kubernetes 1.16 may cause you to type the above command this way:
-` # kubeadm -–pod-network-cidr=10.244.0.0/16 init `
 
 > NOTE: Copy off the join commands
 
