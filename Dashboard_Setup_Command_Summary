@@ -1,6 +1,8 @@
 Kubernetes Security
 Dashboard Setup Command Summary
 
+### THIS LESSON IS BEING DEPRACATED AND THE WEB UI (DASHBOARD) SETUP IS ITS REPLACEMENT
+
 The following is a command summary to install the Kubernetes Dashboard on your playground server.
 
 
