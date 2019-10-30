@@ -18,20 +18,22 @@ The file create-admin-sa.yaml is available on the course github site. You may do
 kind: ServiceAccount
 metadata:
   name: admin-user
-  namespace: kube-system```
+  namespace: kube-system
+```
 
 After creating the file, enter the following command:
 
-```$ kubectl create -f create-admin-sa.yaml
+```$ kubectl create -f create-admin-sa.yaml```
 
 After creating the service account, it is necessary to create the role binding. To do so you will need to download or create the following file.
 
 To download:
 
-$ wget https://raw.gitbub.com/linuxacademy/content-kubernetes-security/master/create-admin-rb.yaml
+```$ wget https://raw.gitbub.com/linuxacademy/content-kubernetes-security/master/create-admin-rb.yaml```
 
 ...or use an editor to create the following file;
 
+```
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
@@ -44,17 +46,18 @@ subjects:
 - kind: ServiceAccount
   name: admin-user
   namespace: kube-system
+```
 
 Once the file has been created, you may input the following command:
 
-$ kubectl create -f create-admin-rb.yaml
+```$ kubectl create -f create-admin-rb.yaml```
 
 After creating the service account and role binding, you may use the following command to query the secret for the admin-user. 
 
-$ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+```$ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')```
 
 The command will provide the following output;
-
+```
 Name:         admin-user-token-ff2mm
 Namespace:    kube-system
 Labels:       <none>
@@ -68,25 +71,26 @@ Data
 ca.crt:     1025 bytes
 namespace:  11 bytes
 token:      <your token data here>
-
+```
 The token data displayed should be copied off to a document or notepad so that you may use it when it is time to log into the dashboard.
 
 To install the dashboard software, input the following four commands;
 
+```
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/influxdb/heapster.yaml
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/influxdb/influxdb.yaml
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/rbac/heapster-rbac.yaml
-
+```
 The port specified in the dashboard sets it up to listen on localhost:8001. To expose this port to a client you will need to run the Kubernetes proxy, and tunnel into the server with ssh.
 
 To run the proxy, input the following command. You may elect to place an '&' ampersand after the command to run it in background. If you do so, not the PID (Process ID) so you may terminate it later.
 
-$ kubectl proxy
+```$ kubectl proxy```
 
 In a terminal emulator window, you may start the tunnel with the following command. Again an '&' ampersand may be used to run it in background.
 
-$ ssh -g -L 8001:localhost:8001 -f -N cloud_user@<Your server IP address here>
+```$ ssh -g -L 8001:localhost:8001 -f -N cloud_user@<Your server IP address here>```
 
 Once the tunnel has been established, you may enter the following URL address from the same system that is running the ssh tunnel.
 
