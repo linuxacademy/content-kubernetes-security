@@ -1,4 +1,6 @@
-### Kubernetes Security
+![la logo](https://user-images.githubusercontent.com/42839573/67322755-818e9400-f4df-11e9-97c1-388bf357353d.png)
+
+## Kubernetes Security
 ### Dashboard Setup Command Summary
 
 The following is a command summary to install the Kubernetes Dashboard on your playground server.
