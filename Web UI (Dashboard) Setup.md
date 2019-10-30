@@ -32,7 +32,7 @@ $ cat create-admin-rb-dashboard.yaml
 $ kubectl apply -f create-admin-rb-dashboard.yam
 ```
 
-For your refence, the yaml is as follows:
+For your reference, the yaml is as follows:
 
 ```
 apiVersion: rbac.authorization.k8s.io/v1
