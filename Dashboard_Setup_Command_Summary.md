@@ -1,5 +1,5 @@
-Kubernetes Security
-Dashboard Setup Command Summary
+## Kubernetes Security
+## Dashboard Setup Command Summary
 
 ### THIS LESSON IS BEING DEPRACATED AND THE WEB UI (DASHBOARD) SETUP IS ITS REPLACEMENT
 
@@ -10,19 +10,19 @@ The following is a command summary to install the Kubernetes Dashboard on your p
 
 The file create-admin-sa.yaml is available on the course github site. You may download it by entering:
 
-$ wget https://raw.gitbub.com/linuxacademy/content-kubernetes-security/master/create-admin-sa.yaml
+```$ wget https://raw.gitbub.com/linuxacademy/content-kubernetes-security/master/create-admin-sa.yaml```
 
 ...or, you may simply use vi or the editor of your choice to create the following file.
 
-apiVersion: v1
+```apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: admin-user
-  namespace: kube-system
+  namespace: kube-system```
 
 After creating the file, enter the following command:
 
-$ kubectl create -f create-admin-sa.yaml
+```$ kubectl create -f create-admin-sa.yaml
 
 After creating the service account, it is necessary to create the role binding. To do so you will need to download or create the following file.
 
