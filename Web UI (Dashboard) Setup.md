@@ -75,7 +75,13 @@ token:      <your token data here>
 
 The token data displayed should be copied off to a document or notepad so that you may use it when it is time to log into the dashboard.
 
-5) The port specified in the dashboard sets it up to listen on localhost:8001. To expose this port to a client you will need to run the Kubernetes proxy, and tunnel into the server with ssh.
+5) To deploy the dashboard enter the following command:
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta6/aio/deploy/recommended.yaml
+```
+
+6) The port specified in the dashboard sets it up to listen on localhost:8001. To expose this port to a client you will need to run the Kubernetes proxy, and tunnel into the server with ssh.
 
 To run the proxy, input the following command. You may elect to place an '&' ampersand after the command to run it in background. If you do so, not the PID (Process ID) so you may terminate it later.
 
