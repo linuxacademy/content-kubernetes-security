@@ -1,0 +1,19 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata:  
+  name: psp-deploy 
+  labels: 
+    app: paused 
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: paused 
+  template: 
+    metadata: 
+      labels:  
+        app: paused 
+    spec: 
+      containers: 
+      - name: paused 
+        image: k8s.gcr.io/pause 
